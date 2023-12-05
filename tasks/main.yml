@@ -1,6 +1,9 @@
 ---
 # tasks file for ansible-postgresql
 
+- debug:
+  msg: "Updated {{ docker_postgres__default_env }}"
+
 - name: Remove existing {{ docker_postgres__name }} container
   docker_container:
     name: "{{ docker_postgres__name }}"
